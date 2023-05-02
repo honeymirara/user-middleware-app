@@ -8,4 +8,10 @@ function getAllUsers() {
     return array
 }
 
-module.exports ={getAllUsers};
+
+function getUserById(id){
+const array = JSON.parse(fs.readFileSync(path));
+const filtered = array.filter(el => el.id == id);
+return filtered
+}
+module.exports ={getAllUsers, getUserById};
