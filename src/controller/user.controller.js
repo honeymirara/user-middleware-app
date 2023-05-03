@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllUsers, getUserById, createUser } = require('../service/user.service');
+const { getAllUsers, getUserById, createUser, updateById } = require('../service/user.service');
 
 const route = express.Router();
 
@@ -17,6 +17,13 @@ route.post('/', (req, res) => {
     const { name, surname, email, pwd } = req.body;
     const data = createUser(name, surname, email, pwd);
     res.send(data);
+});
+
+route.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const { name, surname, email, pwd } = req.body;
+    const data =
+        res.send(data);
 })
 
 

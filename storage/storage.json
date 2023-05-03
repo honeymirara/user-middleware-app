@@ -82,5 +82,11 @@
         "surname": "Николаев",
         "email": "nikkkk@mail.ru",
         "pwd": "12345678"
+    },
+    {
+        "name": "Hanna",
+        "surname": "Pleshko",
+        "email": "hannapleshko@gmail.com",
+        "pwd": "12345678"
     }
 ]
