@@ -8,10 +8,14 @@ function getAllUsers() {
     return array
 }
 
+function createUser(){
+    
+}
+
 
 function getUserById(id){
 const array = JSON.parse(fs.readFileSync(path));
 const filtered = array.filter(el => el.id == id);
 return filtered
 }
-module.exports ={getAllUsers, getUserById};
+module.exports ={getAllUsers, getUserById, createUser};
