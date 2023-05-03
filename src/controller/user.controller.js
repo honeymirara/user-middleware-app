@@ -22,9 +22,11 @@ route.post('/', (req, res) => {
 route.put('/:id', (req, res) => {
     const { id } = req.params;
     const { name, surname, email, pwd } = req.body;
-    const data =
-        res.send(data);
-})
+    const data = updateById(id, name, surname, email, pwd);
+    res.send(data);
+});
+
+route.delete()
 
 
 

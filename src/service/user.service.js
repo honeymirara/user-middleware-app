@@ -25,26 +25,27 @@ function createUser(name, surname, email, pwd) {
 function getUserById(id) {
     const array = JSON.parse(fs.readFileSync(path));
     const filtered = array.filter(el => el.id == id);
-    return filtered
+    return filtered;
 };
 
 function updateById(id, name, surname, email, pwd) {
     const array = JSON.parse(fs.readFileSync(path));
-    const filtered = array.filter(el => el.id == id);
-    if (array.length == filtered.length) throw new Error('id is not defined')
-}
+    const filterById = array.filter(el => el.id != id);
 
+    if (array.length == filterById.length) throw new Error("id not found");
 
-const obj = {
-    id: array.length + 1,
-    name: name,
-    surname: surname,
-    email: email,
-    pwd: pwd
+    const obj = {
+        id,
+        name,
+        surname,
+        email,
+        pwd
+    };
+
+    filterById.push(obj);
+    fs.writeFileSync(path, JSON.stringify(filterById));
+    return filterById;
 };
 
-filtered.push(obj);
-fs.writeFileSync(path, JSON.stringify(array));
-return filtered;
 
 module.exports = { getAllUsers, getUserById, createUser, updateById };
